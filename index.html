@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular Maps</title>
+    
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+      
+            <script src="js/funcion.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<div ng-app="mapsApp" ng-controller="MapCtrl">
+  <div class="container">
+     <H3> Markers </H3>
+   <!-- <pre> {{cities | json}}</pre> -->
+    <div class="row">
+      <div class="col-sm-12">
+        <label for="">Nombre</label>
+        <input type="text" id="textNombre" value="" class="form-control" ng-model="city" />
+        <label for="">Descripción</label>
+        <input type="text" id="textDescripcion" value="" class="form-control" ng-model="desc" />
+        <label for="">Latitud</label>
+        <input type="text" id="textLatitud" value="" class="form-control" ng-model="lat" />
+        <label for="">Longitud</label>
+        <input type="text" id="textLongitud" value="" class="form-control" ng-model="long" />
+        <br>
+        <button class="pull-right btn btn-success" ng-click="agregarDireccion()" id="boton-txt" value="Descargar TXT" >Nueva Dirección</button>
+          
+          
+<div>
+    <br/>
+    <br/>
+</div>
+<br/>
+        
+      </div>
+    </div>
+    <br / >  
+    <div id="map"></div> 
+    <br / >
+    <div class="row">
+      <div class="col-sm-12">
+              <ul>
+        <li data-ng-repeat="item in cities">
+          {{item.city}}
+          <button ng-click="removeMarker($index)">Remover</button>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+    
+        <script src="js/index.js"></script>
+      <script src="js/funcion.js"></script>
+
+    
+    
+  </body>
+</html>
